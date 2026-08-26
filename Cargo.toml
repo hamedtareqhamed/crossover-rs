@@ -1,0 +1,45 @@
+[package]
+name = "crossover-rs"
+version = "0.1.0"
+edition = "2021"
+authors = ["Hamed"]
+description = "Ultra-lightweight native crosshair overlay for Linux (Wayland & X11) written in pure Rust"
+license = "GPL-3.0-or-later"
+readme = "README.md"
+repository = "https://github.com/hamed/crossover-rs"
+keywords = ["crosshair", "overlay", "gaming", "wayland", "x11"]
+categories = ["games", "command-line-utilities", "gui"]
+
+[[bin]]
+name = "crossover"
+path = "src/main.rs"
+
+[features]
+default = ["wayland", "x11"]
+wayland = ["dep:smithay-client-toolkit", "dep:wayland-client", "dep:wayland-protocols", "dep:wayland-protocols-wlr"]
+x11 = ["dep:x11rb"]
+
+[dependencies]
+serde = { version = "1.0", features = ["derive"] }
+serde_json = "1.0"
+toml = "0.8"
+tiny-skia = "0.11"
+resvg = { version = "0.44", default-features = false }
+crossterm = { version = "0.28", default-features = false, features = ["events"] }
+libc = "0.2"
+
+# Wayland deps
+smithay-client-toolkit = { version = "0.19", features = ["calloop"], optional = true }
+wayland-client = { version = "0.31", optional = true }
+wayland-protocols = { version = "0.32", features = ["client"], optional = true }
+wayland-protocols-wlr = { version = "0.3", features = ["client"], optional = true }
+
+# X11 deps
+x11rb = { version = "0.13", default-features = false, features = ["allow-unsafe-code", "shm", "xfixes", "shape", "randr"], optional = true }
+
+[profile.release]
+opt-level = "z"
+lto = true
+codegen-units = 1
+panic = "abort"
+strip = true
