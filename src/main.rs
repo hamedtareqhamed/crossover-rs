@@ -95,7 +95,11 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
 
                 #[cfg(feature = "wayland")]
                 if is_wayland {
-                    return backend_wayland::run_wayland(config);
+                    if let Err(e) = backend_wayland::run_wayland(config.clone()) {
+                        eprintln!("[crossover] Wayland native Layer-Shell not supported by compositor: {}. Falling back to X11/XWayland...", e);
+                    } else {
+                        return Ok(());
+                    }
                 }
 
                 #[cfg(feature = "x11")]
