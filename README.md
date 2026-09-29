@@ -58,6 +58,18 @@ CrossOver-rs gives you two levels of crosshairs:
 ## 🚀 Quick Install
 
 ### One-liner (Fastest)
+
+Install directly with `wget`:
+```bash
+wget -qO- https://raw.githubusercontent.com/hamedtareqhamed/crossover-rs/main/install.sh | bash
+```
+
+Or with `curl`:
+```bash
+curl -fsSL https://raw.githubusercontent.com/hamedtareqhamed/crossover-rs/main/install.sh | bash
+```
+
+### Manual Install
 ```bash
 git clone https://github.com/hamedtareqhamed/crossover-rs.git
 cd crossover-rs
@@ -153,6 +165,11 @@ crossover --quit
 ## 🇸🇦 دليل الاستخدام باللغة العربية
 
 برنامج **CrossOver-rs** هو تطبيق شعيرة تصويب (Crosshair Overlay) مخصص لأنظمة لينكس مكتوب بلغة **Rust** بالكامل وبدون أي أطر واجهات ثقيلة، ومستوحى من المشروع الشهير CrossOver للمطور Lacy Morrow.
+
+### التثبيت السريع بأمر واحد:
+```bash
+wget -qO- https://raw.githubusercontent.com/hamedtareqhamed/crossover-rs/main/install.sh | bash
+```
 
 ### المميزات الرئيسية:
 * **حجم فائق الصغر:** ملف تنفيذي واحد بحجم **1.3 ميغابايت** فقط.
