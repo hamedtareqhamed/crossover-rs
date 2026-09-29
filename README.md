@@ -8,11 +8,11 @@
 
 *Inspired by and built with appreciation for the original [CrossOver](https://github.com/lacymorrow/crossover) by [Lacy Morrow](https://github.com/lacymorrow).*
 
-[![Release](https://img.shields.io/github/v/release/hamed/crossover-rs?color=00ff88&logo=rust)](https://github.com/hamed/crossover-rs/releases)
+[![Release](https://img.shields.io/github/v/release/hamedtareqhamed/crossover-rs?color=00ff88&logo=rust)](https://github.com/hamedtareqhamed/crossover-rs/releases)
 [![License: GPL-3.0](https://img.shields.io/badge/License-GPL--3.0-blue.svg)](LICENSE)
-[![Binary Size](https://img.shields.io/badge/Size-1.3_MB-brightgreen)](https://github.com/hamed/crossover-rs)
-[![Memory](https://img.shields.io/badge/RAM-~8_MB-success)](https://github.com/hamed/crossover-rs)
-[![Wayland & X11](https://img.shields.io/badge/Platform-Wayland%20%7C%20X11-purple)](https://github.com/hamed/crossover-rs)
+[![Binary Size](https://img.shields.io/badge/Size-1.3_MB-brightgreen)](https://github.com/hamedtareqhamed/crossover-rs)
+[![Memory](https://img.shields.io/badge/RAM-~8_MB-success)](https://github.com/hamedtareqhamed/crossover-rs)
+[![Wayland & X11](https://img.shields.io/badge/Platform-Wayland%20%7C%20X11-purple)](https://github.com/hamedtareqhamed/crossover-rs)
 [![Anti-Cheat Safe](https://img.shields.io/badge/Anti--Cheat-100%25_Safe-brightgreen)](#-anti-cheat-safety)
 
 [**Quick Install**](#-quick-install) · [**Controls**](#-interactive-terminal-controller) · [**Crosshairs Library**](#-crosshairs--customization) · [**Credits**](#-credits--acknowledgments) · [**العربية**](#-دليل-الاستخدام-باللغة-العربية)
@@ -59,7 +59,7 @@ CrossOver-rs gives you two levels of crosshairs:
 
 ### One-liner (Fastest)
 ```bash
-git clone https://github.com/hamed/crossover-rs.git
+git clone https://github.com/hamedtareqhamed/crossover-rs.git
 cd crossover-rs
 ./install.sh
 ```

@@ -6,7 +6,7 @@ authors = ["Hamed"]
 description = "Ultra-lightweight native crosshair overlay for Linux (Wayland & X11) written in pure Rust"
 license = "GPL-3.0-or-later"
 readme = "README.md"
-repository = "https://github.com/hamed/crossover-rs"
+repository = "https://github.com/hamedtareqhamed/crossover-rs"
 keywords = ["crosshair", "overlay", "gaming", "wayland", "x11"]
 categories = ["games", "command-line-utilities", "gui"]
 
