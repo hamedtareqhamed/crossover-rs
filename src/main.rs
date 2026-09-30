@@ -3,6 +3,7 @@ pub mod interactive;
 pub mod ipc;
 pub mod renderer;
 pub mod svg_assets;
+pub mod tray;
 
 #[cfg(feature = "wayland")]
 pub mod backend_wayland;
@@ -13,6 +14,7 @@ pub mod backend_x11;
 use config::Config;
 use ipc::{is_daemon_running, send_command, Command, Response};
 use std::env;
+use std::io::IsTerminal;
 use std::thread;
 use std::time::Duration;
 
@@ -90,6 +92,7 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
                     return Ok(());
                 }
                 let config = Config::load();
+                tray::spawn_tray(config.clone());
                 let is_wayland = env::var("WAYLAND_DISPLAY").is_ok()
                     || env::var("XDG_SESSION_TYPE").map(|v| v == "wayland").unwrap_or(false);
 
@@ -228,5 +231,8 @@ fn main() -> Result<(), Box<dyn std::error::Error>> {
     }
 
     ensure_daemon_running();
+    if !std::io::stdin().is_terminal() && !std::io::stdout().is_terminal() {
+        return Ok(());
+    }
     interactive::run_interactive()
 }

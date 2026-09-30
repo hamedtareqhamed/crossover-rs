@@ -85,9 +85,26 @@ cargo install --path .
 
 ## 🎮 How to Control
 
-CrossOver-rs gives you two seamless ways to control your crosshair:
+CrossOver-rs gives you multiple seamless ways to control your crosshair:
 
-### 1. Interactive Terminal Controller (TUI)
+### 1. System Tray Icon (No Terminal Required!) ⭐
+Launch CrossOver from your Application Menu, or run `crossover -d`. A sleek icon appears in your system tray (taskbar next to the clock):
+* **Left-Click Tray Icon:** Instantly toggle crosshair visibility (Show / Hide).
+* **Right-Click Tray Menu:**
+  * 👁️ **Toggle Visibility**
+  * 📍 **Position Control (Direct Method):**
+    * Display current screen offset `(X: +0, Y: +0)`
+    * ⬆️ Nudge Up (+1px / +5px)
+    * ⬇️ Nudge Down (+1px / +5px)
+    * ⬅️ Nudge Left (+1px / +5px)
+    * ➡️ Nudge Right (+1px / +5px)
+    * 🎯 Reset to Exact Center (0, 0)
+  * 🎯 **Select Style:** Cross, Dot, Circle, Chevron, Box, T-Style...
+  * 🎨 **Pick Color:** Neon Green, Crimson Red, Cyan, Yellow, White...
+  * 📏 **Adjust Size & Thickness:** + / - steps or instant presets.
+  * ❌ **Quit CrossOver**
+
+### 2. Interactive Terminal Controller (TUI)
 Simply run `crossover` in any terminal:
 ```bash
 crossover
@@ -121,7 +138,7 @@ crossover
 
 ---
 
-### 2. CLI & Background Daemon
+### 3. CLI & Background Daemon
 
 Start in background mode:
 ```bash
@@ -172,6 +189,7 @@ wget -qO- https://raw.githubusercontent.com/hamedtareqhamed/crossover-rs/main/in
 ```
 
 ### المميزات الرئيسية:
+* **تحكم رسومي كامل عبر شريط المهام (System Tray):** أيقونة أنيقة بجانب الساعة تمكنك من إظهار/إخفاء الشعيرة بالزر الأيسر، والتحكم المباشر في الموضع (أعلى، أسفل، يمين، يسار، وتوسيط)، واختيار الأنماط والألوان والأحجام بالزر الأيمن دون لمس التيرمينال نهائياً.
 * **حجم فائق الصغر:** ملف تنفيذي واحد بحجم **1.3 ميغابايت** فقط.
 * **استهلاك موارد شبه منعدم:** ~8 ميغابايت رام و 0% معالج أثناء اللعب.
 * **دعم كامل لـ Wayland و X11:** مع تمرير كامل للنقرات (100% Click-through).

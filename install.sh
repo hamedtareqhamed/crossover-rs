@@ -82,13 +82,26 @@ cat << DESKTOPEOF > "$DESKTOP_DIR/crossover.desktop"
 [Desktop Entry]
 Name=CrossOver
 GenericName=Crosshair Overlay
-Comment=Ultra-lightweight Linux Crosshair Overlay (Wayland & X11)
-Exec=$BIN_DIR/$APP_NAME
+Comment=Ultra-lightweight Linux Crosshair Overlay with System Tray (Wayland & X11)
+Exec=$BIN_DIR/$APP_NAME -d
 Icon=crossover
-Terminal=true
+Terminal=false
 Type=Application
 Categories=Game;Utility;
-Keywords=crosshair;overlay;aim;fps;gaming;
+Keywords=crosshair;overlay;aim;fps;gaming;tray;
+Actions=Toggle;Interactive;Quit;
+
+[Desktop Action Toggle]
+Name=Toggle Visibility
+Exec=$BIN_DIR/$APP_NAME --toggle
+
+[Desktop Action Interactive]
+Name=Interactive Terminal Controller
+Exec=sh -c "$BIN_DIR/$APP_NAME -i"
+
+[Desktop Action Quit]
+Name=Quit CrossOver
+Exec=$BIN_DIR/$APP_NAME --quit
 DESKTOPEOF
 
 chmod +x "$DESKTOP_DIR/crossover.desktop"
